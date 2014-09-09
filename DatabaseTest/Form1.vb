@@ -10,6 +10,7 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
+        Form1.Controls
         Dim connectionString As String = "Server=127.0.0.1; Database=calendar; Uid=root;Pwd=teamsoftware"
         Dim connection As New MySqlConnection(connectionString)
         Dim da As New MySqlDataAdapter
@@ -20,6 +21,7 @@ Public Class Form1
             Dim sqlComm As New MySqlCommand
 
             sqlComm.CommandText = "SELECT * FROM months WHERE name = '" + ComboBox1.Text + "';"
+
             'sqlComm.CommandText = "SELECT * FROM months;"
             'da = New MySqlDataAdapter(, connection)
             sqlComm.Connection = connection
@@ -42,6 +44,7 @@ Public Class Form1
 
         Dim pictureboxes(7) As PictureBox
 
+        'new comment
         For counter As Integer = 0 To 6
             pictureboxes(counter) = New PictureBox
             pictureboxes(counter).BorderStyle = BorderStyle.FixedSingle
